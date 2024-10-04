@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(9, 48, 71);
+}
+
+.container-page {
+    display: grid;
+    grid-template-areas:
+        "menu"
+        "hero"
+        "principal"
+        "team"
+        "buttom";
+}
+
+nav {
+    grid-area: menu;
+}
+
+.bar-menu {
+    background-color: white;
+    border: 1px solid lightblue;
+}
+
+.item-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.item-menu img {
+    height: 20px;
+}
+
+.select-categories {
+    width: 200px;
+    padding: 3px;
+    border-radius: 3px;
+    border-color: rgb(190, 194, 197);
+    color: gray;
+}
+
+/* Banner - Hero */
+
+.hero-section {
+    grid-area: hero;
+    background-image: url(../img/Banner1-serena.jpg);
+    height: 400px;
+    color: rgb(60, 138, 161);
+}
+
+.hero-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 320px;
+}
+
+/* Seccion principal.galeria */
+main {
+    grid-area: principal;
+    background-color: white;
+}
+
+.container-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 16px;
+    gap: 16px;
+}
+
+.card-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    border: 1px solid rgb(190, 194, 197);
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px 3px 1px lightgray;
+}
+
+.card-gallery img {
+    width: 100%;
+    margin: auto;
+}
+
+.card-gallery button {
+    background-color: lightslategray;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 8px;
+    box-shadow: 1px 1px 3px 1px lightgray
+}
+
+.container-products {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+}
+
+.container-products button {
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: rgb(61, 94, 114);
+    color: white;
+    box-shadow: 1px 1px 3px 1px rgb(211, 211, 211)
+}
+
+
+/* Quienes somos section */
+.team {
+    grid-area: team;
+}
+
+.box-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px;
+}
+
+.info-content {
+    padding: 18px;
+}
+
+.info-content button {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightslategray;
+    color: white;
+    margin: 20px;
+    box-shadow: 1px 1px 3px 1px lightgray;
+}
+
+/* Seccion footer */
+
+footer {
+    grid-area: buttom;
+    background-color: lightslategray;
+    height: 160px;
+    color: white;
+}
+
+.container-footer {
+    display: flex;
+    padding: 24px;
+    border: 1px solid pink;
+}
+
+.box-info-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-rrss-icons {
+    display: flex;
+    justify-content: flex-start;
+    padding: 12px;
+}
+
+.info-icons-rrss {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px;
+    gap: 8px;
+}
+
+.info-icons-rrss img {
+    width: 25px;
+}
+
+.info-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+
+@media(max-width:575px) {
+    .container-page {
+        grid-template-columns: 1fr;
+    }
+
+    .bar-menu-expanded {
+        display: none;
+    }
+
+}
+
+@media(min-width:576px) {
+    .container-page {
+        display: grid;
+        grid-template-columns: 15% 85%;
+        grid-template-areas:
+            "menu hero"
+            "menu principal"
+            "menu team"
+            "buttom buttom";
+    }
+
+
+    .burger-menu {
+        display: none;
+    }
+
+    .bar-menu {
+        height: 100%;
+        border: 1px solid cadetblue;
+    }
+
+
+    .item-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .select-categories {
+        width: 180px;
+        border: 1px solid sandybrown;
+    }
+
+    .bar-menu-desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bar-menu-expanded {
+        list-style: none;
+        font-weight: 500;
+    }
+
+    .bar-menu-expanded li {
+        padding: 10px;
+        color: gray
+    }
+
+    .hero-box {
+        align-items: end;
+        margin-top: 150px;
+        margin-right: 80px;
+    }
+
+    .container-gallery {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 30px;
+        column-gap: 15px;
+        row-gap: 15px;
+    }
+
+    .card-gallery {
+        max-height: 310px;
+        width: 240px;
+        gap: 6px;
+        transition: all 0.2s ease-out;
+    }
+
+    .card-gallery:hover {
+        max-height: 330px;
+        width: 260px;
+    }
+
+    .card-gallery button {
+        background-color: lightslategray;
+        transition: all 0.1s ease-out;
+    }
+
+    .card-gallery button:hover {
+        background-color: rgb(69, 106, 143);
+    }
+
+    .container-footer {
+        display: flex;
+        justify-content: space-around;
+        padding: 24px;
+    }
+
+    .box-info-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-rrss-icons {
+        display: flex;
+        justify-content: flex-start;
+        padding: 12px;
+    }
+}
